@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { Doughnut } from "react-chartjs-2";
-import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
+import { Chart as ChartJS, ArcElement, Tooltip, Legend, ChartOptions } from "chart.js";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
@@ -19,11 +19,11 @@ const DoughnutChart = () => {
   };
 
   // Options for the chart
-  const options = {
+  const options: ChartOptions<'doughnut'> = {
     plugins: {
       legend: {
         display: true,
-        position: "right", // Legend is on the right side
+        position: "right", // 'right' is a valid position value
         labels: {
           boxWidth: 12,
           usePointStyle: true,
@@ -40,7 +40,6 @@ const DoughnutChart = () => {
     },
     cutout: "70%", // Creates the doughnut effect
   };
-
   return (
     <div style={{ width: "300px", height: "300px" }}>
       <Doughnut data={data} options={options} />
