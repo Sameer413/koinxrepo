@@ -56,11 +56,6 @@ const LineChart = () => {
       legend: {
         display: false, // Hide legend if needed
       },
-      tooltip: {
-        callbacks: {
-          label: (tooltipItem) => `$${tooltipItem.raw}`, // Display dollar values
-        },
-      },
     },
     scales: {
       x: {
@@ -72,9 +67,6 @@ const LineChart = () => {
         beginAtZero: false, // Set `true` to always start at zero
         grid: {
           color: "rgba(200, 200, 200, 0.2)", // Light gridlines
-        },
-        ticks: {
-          callback: (value) => `$${value}`, // Add dollar sign to Y-axis labels
         },
       },
     },
